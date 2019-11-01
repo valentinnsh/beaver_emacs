@@ -74,6 +74,8 @@
 
 ;;------------------------some mode settings-----------------
 (ivy-mode 1) ;; ivy for better search
+(tool-bar-mode -1) ;;disable toolbar
+(menu-bar-mode -1)
 
 ;; -----------------------Ibuffer settings-------------------
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -104,6 +106,9 @@
 (add-to-list 'load-path "~/.emacs.d/all-the-icons")
 (require 'all-the-icons)
 
+;;-----------------------Company-completion----------------
+(add-hook 'after-init-hook 'global-company-mode)
+
 
 ;;###########################################################
 (custom-set-variables
@@ -112,7 +117,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-check-signature nil)
- '(package-selected-packages (quote (org-edna ivy-explorer hydra ivy))))
+ '(package-selected-packages (quote (company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
