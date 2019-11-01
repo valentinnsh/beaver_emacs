@@ -94,7 +94,15 @@
 (add-to-list 'load-path "~/.emacs.d/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
+;;----------------------memoize----------------------------
+(add-to-list 'load-path "~/.emacs.d/emacs-memoize")
+(require 'memoize)
+
+;;-----------------------All-the-icons----------------------
+(add-to-list 'load-path "~/.emacs.d/all-the-icons")
+(require 'all-the-icons)
 
 
 ;;###########################################################
