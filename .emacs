@@ -1,10 +1,3 @@
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 (setq my_name "V.Shishkin")
 ;;(setq run-on-win t)
 ;;(setq koi8-coding t)
@@ -72,6 +65,15 @@
 
 ;; TODO - read about abbrev mode
 
+;;----------------------MELPA repo-------------------------
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t))
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+(package-initialize)
 ;;------------------------some mode settings-----------------
 (ivy-mode 1) ;; ivy for better search
 (tool-bar-mode -1) ;;disable toolbar
@@ -116,8 +118,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("a22f40b63f9bc0a69ebc8ba4fbc6b452a4e3f84b80590ba0a92b4ff599e53ad0" "0598c6a29e13e7112cfbc2f523e31927ab7dce56ebb2016b567e1eff6dc1fd4f" default)))
  '(package-check-signature nil)
- '(package-selected-packages (quote (company org-edna ivy-explorer hydra ivy))))
+ '(package-selected-packages
+   (quote
+    (gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
