@@ -111,6 +111,20 @@
 ;;-----------------------Company-completion----------------
 (add-hook 'after-init-hook 'global-company-mode)
 
+;;-----------------------Elpy settings--------------------
+(require 'elpy)
+(setq python-shell-interpreter "/usr/bin/python3"
+      python-shell-interpreter-args "-i")
+
+(setq flycheck-python-pycompile-executable "python3"
+      flycheck-python-pylint-executable "python3"
+      flycheck-python-flake8-executable "python3")
+
+(setq elpy-rpc-backend "jedi")
+
+(advice-add 'python-mode :before 'elpy-enable)
+
+(setq elpy-project-root nil)
 
 ;;###########################################################
 (custom-set-variables
@@ -124,7 +138,7 @@
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (elpy gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
