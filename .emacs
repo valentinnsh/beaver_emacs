@@ -5,7 +5,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(setq my_name "vvvV.Shishkin")
+(setq my_name "V.Shishkin")
 ;;(setq run-on-win t)
 ;;(setq koi8-coding t)
 
