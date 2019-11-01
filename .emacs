@@ -56,8 +56,6 @@
 (global-set-key [C-f3] 'find-current-file) ;in fact - reload
 (global-set-key [f4] 'switch-to-buffer)
 (global-set-key [C-f4] 'kill-buffer)
-;; (global-set-key [f5] 'hs-hide-block)
-;; (global-set-key [f6] 'hs-hide-level)
 (global-set-key [f7] 'compile)
 (global-set-key [C-f8] 'next-error)
 
@@ -92,7 +90,14 @@
       (untabify (point-min) (point-max)))
   nil)
 
+;;-----------------------Neotree settings--------------------
+(add-to-list 'load-path "~/.emacs.d/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 
+
+
+;;###########################################################
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
