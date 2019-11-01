@@ -1,3 +1,4 @@
+(add-hook 'after-init-hook (lambda () (load-theme 'gruvbox-dark-hard)))
 (setq my_name "V.Shishkin")
 ;;(setq run-on-win t)
 ;;(setq koi8-coding t)
@@ -138,7 +139,7 @@
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (elpy gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (color-theme elpy gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
