@@ -1,4 +1,5 @@
-(add-hook 'after-init-hook (lambda () (load-theme 'gruvbox-dark-hard)))
+(setq package-enable-at-startup nil) (package-initialize)
+(load-theme 'gruvbox-dark-hard t)
 (setq my_name "V.Shishkin")
 ;;(setq run-on-win t)
 ;;(setq koi8-coding t)
@@ -79,6 +80,9 @@
 (ivy-mode 1) ;; ivy for better search
 (tool-bar-mode -1) ;;disable toolbar
 (menu-bar-mode -1)
+(global-visual-line-mode t)
+(show-paren-mode 1)
+(setq show-paren-style 'expression)
 
 ;; -----------------------Ibuffer settings-------------------
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -112,7 +116,7 @@
 ;;-----------------------Company-completion----------------
 (add-hook 'after-init-hook 'global-company-mode)
 
-;;-----------------------Elpy settings--------------------
+;;-----------------------Elpy-----------------------------
 (require 'elpy)
 (setq python-shell-interpreter "/usr/bin/python3"
       python-shell-interpreter-args "-i")
@@ -126,6 +130,7 @@
 (advice-add 'python-mode :before 'elpy-enable)
 
 (setq elpy-project-root nil)
+;;---------------------------------------------------------
 
 ;;###########################################################
 (custom-set-variables
@@ -139,7 +144,7 @@
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (color-theme elpy gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
