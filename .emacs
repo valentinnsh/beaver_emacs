@@ -64,6 +64,9 @@
 (global-set-key [S-backspace] 'kill-whole-line)
 
 (global-set-key [f11] 'delete-trailing-whitespace)
+(global-set-key [f12] 'expand-abbrev)
+(global-set-key [C-f12] 'abbrev-mode)
+(global-set-key [C-f11] 'toggle-truncate-lines)
 
 ;; TODO - read about abbrev mode
 
@@ -83,6 +86,30 @@
 (global-visual-line-mode t)
 (show-paren-mode 1)
 (setq show-paren-style 'expression)
+(global-linum-mode t)
+
+;; Eshell tab completion like in bash
+(add-hook
+ 'eshell-mode-hook
+ (lambda ()
+   (setq pcomplete-cycle-completions nil)))
+(setq eshell-cmpl-cycle-completions nil)
+
+;;Tramp mode
+(setq tramp-default-method "ssh")
+;;-----Electric-modes settings----------
+(electric-pair-mode 1)
+
+;; Delete trailing whitespaces, format buffer and untabify when save buffer
+(defun format-current-buffer()
+  (indent-region (point-min) (point-max)))
+(defun untabify-current-buffer()
+  (if (not indent-tabs-mode)
+      (untabify (point-min) (point-max)))
+  nil)
+(add-to-list 'write-file-functions 'format-current-buffer)
+(add-to-list 'write-file-functions 'untabify-current-buffer)
+(add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
 ;; -----------------------Ibuffer settings-------------------
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -130,7 +157,260 @@
 (advice-add 'python-mode :before 'elpy-enable)
 
 (setq elpy-project-root nil)
+
 ;;---------------------------------------------------------
+;;
+;;  My old config things
+;;---------------------------------------------------------
+
+(add-hook 'sh-mode-hook 'turn-on-font-lock)
+(add-hook 'makefile-mode-hook 'turn-on-font-lock)
+(add-hook 'lisp-mode-hook 'turn-on-font-lock)
+(add-hook 'html-mode-hook 'turn-on-font-lock)
+(add-hook 'emacs-lisp-mode-hook 'turn-on-font-lock)
+(add-hook 'sgml-mode-hook 'turn-on-font-lock)
+(add-hook 'diff-mode-hook 'turn-on-font-lock)
+(add-hook 'text-mode-hook 'auto-fill-mode)
+
+(setq grep-find-use-xargs 't)
+(fset 'my-split-params
+      [home ?\C-s ?, left right return tab])
+
+(defun my-insert-file-name()
+  (interactive)
+  (insert (file-name-nondirectory (buffer-file-name)))
+  )
+
+;; print expression on alt-left mouse button
+(defun my-gprint(event)
+  ;; print expression on mouse click
+  (interactive "e")
+  (mouse-set-point event)
+  (gud-print (point))
+  )
+;; print *expression on shift-alt-left mouse
+(defun my-gprint-deref(event)
+  ;; print dereferenced expression on mouse click
+  (interactive "e")
+  (mouse-set-point event)
+  (gud-print-deref (point))
+  )
+(defun my-gud-print-reg(beg end)
+  (interactive "r")
+  (let (regval)
+    (setq regval (buffer-substring beg end))
+    (gud-call (concat "print " regval))
+    )
+  )
+
+;; add FILE, *_t, t_* to types list
+
+(defun c-semi&comma-my-inside-parenlist ()
+  "Controls newline insertion after semicolons in parenthesis lists.
+TODO : no newline after comma inside 'for' statement"
+  (cond ((eq last-command-char ?\,)
+	 (save-excursion
+	   (c-end-of-statement)
+	   (not (eq (char-before) ?\())
+	   ;;(up-list -1)
+	   ;;(eq (char-after) ?\()
+	   )
+         )
+
+	nil;; continue checking
+	)
+  )
+
+(defconst c-expand-list
+  '(
+    ("main" "int\nmain(\nint argc,\n char **argv){\n   \n}\n" 39)
+    ("if" "if (){\n\n}\n" (5 8))
+    ("else" "else\n{\n\n}\n" (8))
+    ("elsi" "else if ()\n{\n\n}\n" (10 12 21))
+    ("ife" "if ()\n{\n\n}\nelse\n{\n\n}\n" (5 10 21))
+    ("for" "for (;;)\n{\n\n}\n" (6 7 9 13))
+    ("fori" "for (i = 0 ; i <  ; ++i)\n{\n\n}\n" (18))
+    ("forj" "for (j = 0 ; j <  ; ++j)\n{\n\n}\n" (18))
+    ("fork" "for (k = 0 ; k <  ; ++k)\n{\n\n}\n" (18))
+    ("switch" "switch ()\n{\ncase :\nbreak;\ndefault:\nbreak;\n}\n" (9 13))
+    ("case" "case :\n\nbreak;\n" (6 8 16))
+    ("do" "do\n{\n  \n}\n while ();\n" (8 17))
+    ("while" "while ()\n{\n\n}\n" (8 12))
+    ("ifr" "if (ret == RET_OK)\n{\n\n}\n" (22))
+    ("ifrok" "if (ret == RET_OK)\n{" (20))
+    ("ifnr" "if (ret != RET_OK)\n{\n\n}\n" (22))
+    ("rok" "ret == RET_OK" (14))
+    ("break" " /* BREAK LOOP */\nbreak;\n" (25))
+    ("cont" " /* CONTINUE */\ncontinue;\n" (26))
+    ("fdoc" "/**\n * @brief \n * \n *\n * @param \n *\n * @return \n */" (15))
+    ("par" " * @param " (10))
+    )
+  "Expansions for C mode")
+
+(defconst my-c-style
+  '("ellemtel"
+    (c-basic-offset . 2)
+    (c-offsets-alist
+     (inclass . +)
+     )
+    )
+  )
+
+(defun my-center-line(in-line line-len)
+  (let (
+	(left-off (/ (- line-len (length in-line)) 2))
+	)
+    (concat (make-string left-off ? ) in-line
+	    (make-string (- line-len (length in-line) left-off) ? ))
+    )
+  )
+
+(add-hook 'c-mode-common-hook
+	  '(lambda ()
+	     (c-add-style "my" my-c-style)
+	     (c-set-style "my")
+	     (c-toggle-auto-state -1)
+	     (imenu-add-menubar-index)
+	     (font-lock-mode 1)
+	     (expand-add-abbrevs c-mode-abbrev-table c-expand-list)
+	     (expand-add-abbrevs c++-mode-abbrev-table c-expand-list)
+	     (abbrev-mode -1)
+	     (setq show-trailing-whitespace t)
+					;      (gtags-mode 1)
+	     (c-toggle-hungry-state 1)
+	     (hl-line-mode 1)
+	     (auto-fill-mode -1)
+	     (set-fill-column 80)
+	     (unless (or (file-exists-p "makefile")
+			 (file-exists-p "Makefile"))
+	       (set (make-local-variable 'compile-command)
+		    (concat "gcc -W -Wall -g -o " (file-name-base buffer-file-name) " " (file-name-nondirectory buffer-file-name)))
+	       )
+	     )
+	  )
+
+(add-hook 'c++-mode-hook
+	  '(lambda ()
+	     (c-add-style "my" my-c-style)
+	     (c-set-style "my")
+	     (c-toggle-auto-state -1)
+	     (imenu-add-menubar-index)
+	     (font-lock-mode 1)
+             (expand-add-abbrevs c-mode-abbrev-table c-expand-list)
+             (expand-add-abbrevs c++-mode-abbrev-table c-expand-list)
+             (abbrev-mode -1)
+             (setq show-trailing-whitespace t)
+                                        ;      (gtags-mode 1)
+             (c-toggle-hungry-state 1)
+             (hl-line-mode 1)
+             (auto-fill-mode -1)
+             (set-fill-column 80)
+             (unless (or (file-exists-p "makefile")
+                         (file-exists-p "Makefile"))
+               (set (make-local-variable 'compile-command)
+                    (concat "g++ -W -Wall -g -o " (file-name-base buffer-file-name) " " (file-name-nondirectory buffer-file-name) " -std=c++11"))
+               )
+             )
+          )
+
+;;Fortran90
+(add-hook 'f90-mode-hook
+          '(lambda ()
+             (imenu-add-menubar-index)
+             (font-lock-mode 1)
+             (abbrev-mode -1)
+             (setq show-trailing-whitespace t)
+             (hl-line-mode 1)
+             (auto-fill-mode -1)
+             (set-fill-column 100)
+             (unless (or (file-exists-p "makefile")
+                         (file-exists-p "Makefile"))
+               (set (make-local-variable 'compile-command)
+                    (concat "gfortran -W -Wall -g -o " (file-name-base buffer-file-name) " " (file-name-nondirectory buffer-file-name)))
+               )
+             )
+          )
+
+
+;;Pascal mode
+(require 'compile)
+(defun pascal-mode-additional-init ()
+  (local-set-key "\C-c\C-c" 'compile)
+  (unless (or (file-exists-p "makefile")
+	      (file-exists-p "Makefile"))
+    (set (make-local-variable 'compile-command)
+	 (concat "fpc -g " buffer-file-name)))
+  (font-lock-add-keywords 'pascal-mode
+			  '(("^[ \t]*\\(uses\\)\\>[ \t]*\\([a-z]\\)" 1 font-lock-keyword-face prepend))))
+
+					;("^\\([a-zA-Z0-9\\.]+\\)(\\([0-9]+\\),\\([0-9]+\\))\s\\(.*$\\)" 1 2 3)
+
+
+(add-hook 'pascal-mode-hook
+          (lambda ()
+            (set (make-local-variable 'compile-command)
+                 (concat "fpc -g " (file-name-nondirectory (buffer-file-name)))
+                 )
+	    )
+	  t)
+
+;;Pascal mode
+					; '(compilation-error-regexp-alist
+					;   '("^\\([a-zA-Z0-9\\.]+\\)(\\([0-9]+\\),\\([0-9]+\\))\s\\(.*$\\)" 1 2 3))
+
+
+(defun pas-auto-insert-file()
+  (interactive)
+  (insert   "(*\n"
+	    " * Copyright (c) " (format-time-string "%Y" (current-time)) " " my_name "\n"
+	    " *)\n")
+  )
+
+(defun c-auto-insert-file()
+  (interactive)
+  (insert   "/*\n"
+	    " * Copyright (c) " (format-time-string "%Y" (current-time)) " " my_name "\n"
+	    " *\n"
+	    " */\n"
+	    "\n"
+	    "#include <stdio.h>\n"
+	    )
+  )
+
+(defun cpp-auto-insert-file()
+  (interactive)
+  (insert   "/*\n"
+	    " * Copyright (c) " (format-time-string "%Y" (current-time)) " " my_name "\n"
+	    " *\n"
+	    " */\n"
+	    "\n"
+	    "#include <iostream>\n"
+	    )
+  )
+(defun f90-auto-insert-file()
+  (interactive)
+  (insert "!\n"
+	  "! Copyright (c) " (format-time-string "%Y" (current-time)) " " my_name "\n"
+	  "!\n\n\n"
+	  "program  \nimplicit none\n\n"
+	  "end program"
+	  )
+  )
+
+(defun my-auto-insert ()
+  (cond
+   ((string-match "\\.pas$" (buffer-file-name)) (pas-auto-insert-file))
+   ((string-match "\\.c$" (buffer-file-name)) (c-auto-insert-file))
+   ((string-match "\\.cpp$" (buffer-file-name)) (cpp-auto-insert-file))
+   ((string-match "\\.f90$" (buffer-file-name)) (f90-auto-insert-file))
+                                        ;((string-match "\\.tex$" (buffer-file-name)) (tex-auto-insert-file))
+   nil
+   )
+  )
+
+(add-hook 'find-file-not-found-functions 'my-auto-insert)
+
+
 
 ;;###########################################################
 (custom-set-variables
