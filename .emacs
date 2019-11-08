@@ -107,7 +107,7 @@
   (if (not indent-tabs-mode)
       (untabify (point-min) (point-max)))
   nil)
-(add-to-list 'write-file-functions 'format-current-buffer)
+;; (add-to-list 'write-file-functions 'format-current-buffer) -- Do not uncomment that thing. It will break saving 
 (add-to-list 'write-file-functions 'untabify-current-buffer)
 (add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
