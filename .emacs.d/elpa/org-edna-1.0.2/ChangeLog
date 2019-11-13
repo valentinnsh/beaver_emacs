@@ -1,0 +1,62 @@
+2019-02-02  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '5289910f860a9676b1ab9dd450e8ff82308e91a4'
+
+2018-12-09  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '5ed8901691b26eb5847f9522d20fa93a4fbaace8'
+
+2018-11-25  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '2c5ac0cb808ae6953fbc74cc497245dafb51051f'
+
+2018-11-11  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit 'bec310f1a793e58bfd31a12a612e7ffe931505d0'
+
+2018-11-11  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '26b0a6e6fb03fe4b895bb03972bbb0d80ce2e8e3'
+
+2018-02-07  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '1e10278c3201f55c339a81e33b2ba8e8adf989b6'
+
+2018-02-04  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '35acd8c2f9710e54ec3f433ae4af40cfff635295'
+
+2017-12-27  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit 'dca9cb6d19f9e28ad8fa267a84710703ff38e006'
+
+2017-12-23  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '556e03be1068d746e3d672185987c433302229fa'
+
+2017-12-17  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '1f8935e117918fab8c6ad700b627a67ac4a4f10c'
+
+2017-12-17  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit 'ea0f9fb914cccc1d127eea94bc4c607dbcd4dc7d'
+
+2017-05-29  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '50657b33a26d77cd224621e07ff616527f671bdb'
+
+2017-05-28  Ian Dunn  <dunni@gnu.org>
+
+	Merge commit '7f863bd82effad75b108c191266d79391e2a4439' into
+	scratch/org-edna
+
+2017-05-21  Ian Dunn  <dunni@gnu.org>
+
+	Add 'packages/org-edna/' from commit
+	'ce425a365cc305142a6ec7ec95ebe5fd636100e3'
+
+	git-subtree-dir: packages/org-edna git-subtree-mainline:
+	07e5ab2a06f86a779cba517735cdb9c06c6f287b git-subtree-split:
+	ce425a365cc305142a6ec7ec95ebe5fd636100e3
+
