@@ -1,2 +1,0 @@
-#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("/home/valentine/Documents/journal/20191113" (11 13 2019)))
-#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("/home/valentine/Documents/journal/20191113" (24011 51414 152986 54000)))
