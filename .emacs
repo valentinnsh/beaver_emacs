@@ -107,7 +107,7 @@
   (if (not indent-tabs-mode)
       (untabify (point-min) (point-max)))
   nil)
-;; (add-to-list 'write-file-functions 'format-current-buffer) -- Do not uncomment that thing. It will break saving 
+;; (add-to-list 'write-file-functions 'format-current-buffer) -- Do not uncomment that thing. It will break saving
 (add-to-list 'write-file-functions 'untabify-current-buffer)
 (add-to-list 'write-file-functions 'delete-trailing-whitespace)
 
@@ -158,6 +158,11 @@
 
 (setq elpy-project-root nil)
 
+;;-------------------------Magit---------------------------
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch)
+;;---------------------------------------------------------
+(require 'org-journal)
 ;;---------------------------------------------------------
 ;;
 ;;  My old config things
@@ -424,7 +429,7 @@ TODO : no newline after comma inside 'for' statement"
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (org-journal magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
