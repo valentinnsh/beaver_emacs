@@ -143,33 +143,11 @@
 ;;-----------------------Company-completion----------------
 (add-hook 'after-init-hook 'global-company-mode)
 
-;;-----------------------Elpy-----------------------------
-(require 'elpy)
-(setq python-shell-interpreter "/usr/bin/python3"
-      python-shell-interpreter-args "-i")
-
-(setq flycheck-python-pycompile-executable "python3"
-      flycheck-python-pylint-executable "python3"
-      flycheck-python-flake8-executable "python3")
-
-(setq elpy-rpc-backend "jedi")
-
-(advice-add 'python-mode :before 'elpy-enable)
-
-(setq elpy-project-root nil)
 
 ;;-------------------------Magit---------------------------
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch)
-;;---------------------------------------------------------
-;;---------------------------------------------------------
-;;
-;;  My old config things
-;;---------------------------------------------------------
-
-(add-hook 'sh-mode-hook 'turn-on-font-lock)
-(add-hook 'makefile-mode-hook 'turn-on-font-lock)
-(add-hook 'lisp-mode-hook 'turn-on-font-lock)
+;;ack-mode-hook 'turn-on-font-lock)
 (add-hook 'html-mode-hook 'turn-on-font-lock)
 (add-hook 'emacs-lisp-mode-hook 'turn-on-font-lock)
 (add-hook 'sgml-mode-hook 'turn-on-font-lock)
