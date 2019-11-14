@@ -143,6 +143,12 @@
 ;;-----------------------Company-completion----------------
 (add-hook 'after-init-hook 'global-company-mode)
 
+;;-----------------------Tramp activation------------------
+(require 'tramp)
+(setq tramp-verbose 10)
+(setq tramp-default-method "sftp")
+(define-key global-map (kbd "C-c s") 'counsel-tramp)
+(setq dired-dwim-target t)
 
 ;;-------------------------Magit---------------------------
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -406,7 +412,7 @@ TODO : no newline after comma inside 'for' statement"
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
