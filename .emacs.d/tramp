@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <19/11/14 18:21:33 /home/valentine/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <19/11/15 10:14:23 /home/valentine/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -13,8 +13,6 @@
   ("perl" nil)
   ("file-exists" "test -e")
   ("case-insensitive" nil))
- ((tramp-file-name "sftp" "valentinsh" nil "anp.apmath.spbu.ru" nil nil nil)
-  nil)
  ((tramp-file-name "sftp" "valentinsh" nil "ant.apmath.spbu.ru" nil nil nil)
   ("gio-tool" nil)
   ("default-location" "/home/valentinsh")

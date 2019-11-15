@@ -115,17 +115,6 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 
-;;-----------------------Electric-modes settings-------------
-(electric-pair-mode 1)
-
-;; Delete trailing whitespaces, format buffer and untabify when save buffer
-(defun format-current-buffer()
-  (indent-region (point-min) (point-max)))
-(defun untabify-current-buffer()
-  (if (not indent-tabs-mode)
-      (untabify (point-min) (point-max)))
-  nil)
-
 ;;-----------------------Neotree settings--------------------
 (add-to-list 'load-path "~/.emacs.d/neotree")
 (require 'neotree)
