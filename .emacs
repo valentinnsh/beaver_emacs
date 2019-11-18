@@ -4,6 +4,9 @@
 ;;(setq run-on-win t)
 ;;(setq koi8-coding t)
 
+;; fonts-settings
+(add-to-list 'default-frame-alist '(font . "-SRC-Hack-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1"))
+
 ;;abbrew mode
 (setq-default abbrev-mode t)
 (desktop-save-mode 1)
@@ -114,7 +117,17 @@
 ;; -----------------------Ibuffer settings-------------------
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
-
+(setq ibuffer-expert t)
+;; Define ibuffer filter groups for each known project
+(setq ibuffer-saved-filter-groups
+      '(("home"
+	 ("emacs-config" (or (filename . ".emacs.d")
+			     (filename . "emacs")))
+	 ("Org" (or (mode . org-mode)
+		    (filename . "OrgMode")))
+	 ("remote" (or (filename . "sftp")
+		       (filename . "ssh")))
+	 )))
 ;;-----------------------Neotree settings--------------------
 (add-to-list 'load-path "~/.emacs.d/neotree")
 (require 'neotree)
@@ -385,8 +398,12 @@ TODO : no newline after comma inside 'for' statement"
    )
   )
 
+;;----------------------Hooks--------------------------------
 (add-hook 'find-file-not-found-functions 'my-auto-insert)
-
+(add-hook 'ibuffer-mode-hook
+	  '(lambda ()
+	     (ibuffer-auto-mode 1)
+	     (ibuffer-switch-to-saved-filter-groups "home")))
 
 
 ;;###########################################################

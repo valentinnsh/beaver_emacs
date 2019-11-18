@@ -7,8 +7,7 @@ My personal emacs configuration.
 * memoize from (https://github.com/skeeto/emacs-memoize)
 * company from (http://company-mode.github.io/)
 * gruvbox color theme from (https://github.com/greduan/emacs-theme-gruvbox)
-* elpy
+* hack-font with non-weird zero (https://github.com/equwal/alt-hack0)
 * Ibuffer
 * org-mode
 * ivy
-
