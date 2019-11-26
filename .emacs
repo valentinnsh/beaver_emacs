@@ -70,6 +70,8 @@
 (global-set-key [f12] 'expand-abbrev)
 (global-set-key [C-f12] 'abbrev-mode)
 (global-set-key [C-f11] 'toggle-truncate-lines)
+(global-set-key (kbd "<mouse-9>") 'hs-hide-block)
+(global-set-key (kbd "<mouse-8>") 'hs-show-block)
 
 ;; TODO - read about abbrev mode
 
