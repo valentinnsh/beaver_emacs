@@ -93,6 +93,8 @@
 (setq show-paren-style 'expression)
 (global-linum-mode t)
 
+;; Python version in run-python
+
 ;; Eshell tab completion like in bash
 (add-hook
  'eshell-mode-hook
@@ -131,6 +133,10 @@
 	 ("remote" (or (filename . "sftp")
 		       (filename . "ssh")))
 	 )))
+
+;;-----------------------Org-mode---------------------------
+(setq org-log-done 'time)
+
 ;;-----------------------Neotree settings--------------------
 (add-to-list 'load-path "~/.emacs.d/neotree")
 (require 'neotree)
@@ -421,7 +427,7 @@ TODO : no newline after comma inside 'for' statement"
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (latex-preview-pane counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
