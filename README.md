@@ -1,4 +1,4 @@
-# Beaver Emacs
+### Beaver Emacs
 My personal emacs configuration.
 
 ## Using
