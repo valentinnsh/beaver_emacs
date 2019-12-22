@@ -130,9 +130,16 @@
 	 ("Org" (or (mode . org-mode)
 		    (filename . "OrgMode")
 		    (filename . "org")))
+	 ("Weeb" (or (mode . org-mode)
+		    (filename . "css")
+		    (filename . "html")
+		    (filename . "js")))
 	 ("remote" (or (filename . "sftp")
 		       (filename . "ssh")))
 	 )))
+
+;;-----------------------Markdown mode---------------------
+
 
 ;;-----------------------Org-mode---------------------------
 (setq org-log-done 'time)
@@ -427,7 +434,7 @@ TODO : no newline after comma inside 'for' statement"
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (latex-preview-pane counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (markdown-mode latex-preview-pane counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
