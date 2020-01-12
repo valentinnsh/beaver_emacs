@@ -142,8 +142,23 @@
 
 
 ;;-----------------------Org-mode---------------------------
+(require 'org)
 (setq org-log-done 'time)
-
+(setq org-hide-emphasis-markers t)
+;; bigger latex fragment
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+(add-to-list 'org-emphasis-alist
+             '("*" (bold :foreground "coral")
+               ))
+(add-to-list 'org-emphasis-alist
+             '("/" (:foreground "lime green")
+               ))
+(add-to-list 'org-emphasis-alist
+             '("_" (:foreground "blue violet")
+               ))
+(add-to-list 'org-emphasis-alist
+	     '("~" (:background "deep sky blue" :foreground "MidnightBlue")
+               ))
 ;;-----------------------Neotree settings--------------------
 (add-to-list 'load-path "~/.emacs.d/neotree")
 (require 'neotree)
@@ -434,7 +449,7 @@ TODO : no newline after comma inside 'for' statement"
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (markdown-mode latex-preview-pane counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (rjsx-mode markdown-preview-eww markdown-preview-mode markdown-mode latex-preview-pane counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
