@@ -1,5 +1,7 @@
 (setq package-enable-at-startup nil) (package-initialize)
-(load-theme 'gruvbox-dark-hard t)
+;;(load-theme 'gruvbox-dark-hard t)
+(load-theme 'gruvbox-light-hard t)
+
 (setq my_name "V.Shishkin")
 ;;(setq run-on-win t)
 ;;(setq koi8-coding t)
@@ -27,6 +29,11 @@
 
 (setq word-wrap t) ;; переносить  по словам
 
+
+;; doom modeline
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+(setq doom-modeline-project-detection 'project)
 ;;
 ;; my hotkeys
 ;;
@@ -145,6 +152,7 @@
 (require 'org)
 (setq org-log-done 'time)
 (setq org-hide-emphasis-markers t)
+
 ;; bigger latex fragment
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 (add-to-list 'org-emphasis-alist
@@ -449,7 +457,7 @@ TODO : no newline after comma inside 'for' statement"
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (rjsx-mode markdown-preview-eww markdown-preview-mode markdown-mode latex-preview-pane counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (doom-modeline rjsx-mode markdown-preview-eww markdown-preview-mode markdown-mode latex-preview-pane counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
