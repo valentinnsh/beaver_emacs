@@ -14,4 +14,4 @@ My personal emacs configuration.
 - Ibuffer
 - org-mode
 - ivy
-- mabe
+- mabe more
