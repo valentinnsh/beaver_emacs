@@ -1,0 +1,13 @@
+;; -*- emacs-lisp -*- <19/11/15 12:46:03 /home/valentine/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+(((tramp-file-name "sftp" "valentinsh" nil "ant.apmath.spbu.ru" nil nil nil)
+  ("gio-tool" nil)
+  ("default-location" "/home/valentinsh")
+  ("uid-integer" 4539)
+  ("gid-integer" 4539)
+  ("uid-string" "valentinsh")
+  ("gid-string" "4539")
+  ("tmpdir" "/sftp:valentinsh@ant.apmath.spbu.ru:/tmp")
+  ("case-insensitive" nil)))

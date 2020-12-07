@@ -1,0 +1,247 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Mon Dec  7 17:25:17 2020
+;; Desktop file format version 208
+;; Emacs version 26.3
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (24526 15181 503064 650000) (desktop . "208") "valentine@HALL-9000" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-SRC-Hack-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1") (font-parameter . "-SRC-Hack-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "#282828") (background-color . "#f9f5d7") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . maximized) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . light) (cursor-color . "#282828") (sticky) (environment) (modeline . t) (unsplittable) (frameset--id . "04E3-CC63-B209-24ED") (frameset--mini t . t) (display . ":0") (icon-name) (explicit-name) (user-size . t) (height . 53) (width . 182) (left . 61) (top . 26)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 8) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 76) (min-pixel-width . 100) (min-pixel-height-ignore . 57) (min-pixel-width-ignore . 80) (min-pixel-height-safe . 19) (min-pixel-width-safe . 20)) leaf (pixel-width . 1858) (pixel-height . 997) (total-width . 186) (total-height . 52) (normal-height . 1.0) (normal-width . 1.0) (buffer "december2020.org" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 2) (scroll-bars nil 2 t nil 0 t) (vscroll . 0) (dedicated) (point . 916) (start . 1))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name "/home/valentine/projects/locator/nRF5_SDK_15.3.0_59ac345/TAGS")
+(setq tags-table-list '("/home/valentine/projects/locator/nRF5_SDK_15.3.0_59ac345/TAGS"))
+(setq search-ring '("org" "melp" "makema" "rows" "mel" "org-" "exp_" "dat" "info->len" "filter_ty" "fori" "addr" "0x" "sigin" "app_beacon_info_length" "app_beacon_info_length] = /"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("/home/valentine/Desktop/org/december2020.org" "/home/valentine/projects/intelligent_sys/mathmethods/notes.md" "/home/valentine/projects/dumb.py" "/home/valentine/projects/intelligent_sys/mathmethods/test.py" "/home/valentine/projects/intelligent_sys/mathmethods/tasks.org" "/home/valentine/projects/intelligent_sys/mathmethods/dimath.py" "/home/valentine/.emacs" "/home/valentine/Desktop/org/uni.org~" "/home/valentine/Desktop/org/uni.org" "/home/valentine/projects/locator/org/locator_agenda.org" "/home/valentine/projects/locator/bluz-scan/test_triang.c" "/home/valentine/projects/locator/bluz-scan/test/" "/home/valentine/projects/locator/bluz-scan/dumptofile.c" "/home/valentine/projects/locator/org/filedump.org" "/home/valentine/projects/locator/scripts/flash_standard_beacon.sh" "/home/valentine/projects/locator/bluz-scan/makefile" "/home/valentine/projects/locator/bluz-scan/scantool.c" "/home/valentine/projects/locator/org/plan.org" "/home/valentine/projects/locator/bluz-scan/dumptofile.h" "/home/valentine/projects/locator/bluz-scan/dumptofile.h~" "/home/valentine/.emacs.d/" "/home/valentine/projects/locator/bluz-scan/beacons_s.h" "/home/valentine/projects/locator/bluz-scan/coords.h" "/home/valentine/projects/locator/bluz-scan/exp01.c" "/home/valentine/projects/locator/nRF5_SDK_15.3.0_59ac345/" "/home/valentine/projects/locator/nRF5_SDK_15.3.0_59ac345/examples/ble_peripheral/" "/home/valentine/projects/locator/org/notes.org" "/home/valentine/projects/bluez-experiments/experiments/scantest.c" "/home/valentine/projects/locator/"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/valentine/Desktop/org/december2020.org"
+  "december2020.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode ivy-mode linum-mode company-mode)
+  916
+  '(262 nil)
+  nil
+  nil
+  '((buffer-display-time 24526 14169 695822 256000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring (653 1068 66 391 783 783 194 653 653 535 847 202 245 847 653))))
+
+(desktop-create-buffer 208
+  "/home/valentine/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(abbrev-mode visual-line-mode eldoc-mode ivy-mode linum-mode company-mode)
+  4235
+  '(4125 nil)
+  nil
+  nil
+  '((buffer-display-time 24525 58316 540049 727000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring (4000 3813 4459 4331 13579 883 742 742 1 742 742 742 901 1 5215 5178))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/org/filedump.org"
+  "filedump.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode ivy-mode linum-mode company-mode)
+  1
+  '(889 nil)
+  nil
+  nil
+  '((buffer-display-time 24525 57470 734009 720000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring (863 1 1 1 1 1 101 135 867 863 873 889))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/intelligent_sys/mathmethods/dimath.py"
+  "dimath.py"
+  'python-mode
+  '(abbrev-mode visual-line-mode eldoc-mode ivy-mode linum-mode company-mode)
+  5726
+  '(2529 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24525 50967 874618 402000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring (1 2855 804 5340 5232 5443 4974 5647 5647 5693 5086 4997 4464 4952 4425 7178))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/intelligent_sys/mathmethods/test.py"
+  "test.py"
+  'python-mode
+  '(abbrev-mode visual-line-mode eldoc-mode ivy-mode linum-mode company-mode)
+  268
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24525 50039 82835 473000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring (179 120 230 268 224 179 120 268 268 268 127 44 123 44 122 268))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/dumb.py"
+  "dumb.py"
+  'python-mode
+  '(abbrev-mode visual-line-mode eldoc-mode ivy-mode linum-mode company-mode)
+  776
+  '(1179 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 24525 35540 973826 629000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring (1183 1 1183 1179 1179 900 894 894 894 894))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/org/locator_agenda.org"
+  "locator_agenda.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode ivy-mode linum-mode company-mode)
+  62
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 24523 26472 886725 68000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/org/notes.org"
+  "notes.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode ivy-mode linum-mode company-mode)
+  5747
+  '(5747 nil)
+  nil
+  nil
+  '((buffer-display-time 24523 26418 284342 50000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring (5747 4634 4461 4545 4517 4430 4376 4256 4255 2 4738 5747 5747))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/bluz-scan/dumptofile.c"
+  "dumptofile.c"
+  'c-mode
+  '(visual-line-mode ivy-mode linum-mode company-mode)
+  7875
+  '(1336 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . t) (buffer-display-time 24523 23489 986247 391000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (fill-column . 80) (truncate-lines))
+  '((mark-ring (1336 1515 1 5768 5841 1337 4988 5008 1378 1 6029 7910 5088 6174 6174 7875))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/bluz-scan/test_triang.c"
+  "test_triang.c"
+  'c-mode
+  '(visual-line-mode ivy-mode linum-mode company-mode)
+  80
+  '(nil nil)
+  nil
+  nil
+  '((show-trailing-whitespace . t) (buffer-display-time 24521 61586 870895 242000) (buffer-file-coding-system . utf-8-unix) (fill-column . 80) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/bluz-scan/exp01.c"
+  "exp01.c"
+  'c-mode
+  '(visual-line-mode ivy-mode linum-mode company-mode)
+  1665
+  '(1689 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . t) (buffer-display-time 24521 61455 378362 365000) (buffer-file-coding-system . utf-8-unix) (fill-column . 80) (truncate-lines))
+  '((mark-ring (1807 1552 1530 1530 1525 1810 1807 1525 1525 1807 1525 1525 1693 258 298 348))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/scripts/flash_standard_beacon.sh"
+  "flash_standard_beacon.sh"
+  'sh-mode
+  '(abbrev-mode visual-line-mode ivy-mode linum-mode company-mode)
+  182
+  '(121 nil)
+  nil
+  nil
+  '((buffer-display-time 24521 39614 255619 108000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring (3))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/bluz-scan/makefile"
+  "makefile"
+  'makefile-gmake-mode
+  '(abbrev-mode visual-line-mode ivy-mode linum-mode company-mode)
+  10
+  '(1 nil)
+  nil
+  nil
+  '((indent-tabs-mode . t) (buffer-display-time 24521 37211 442246 274000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/bluz-scan/dumptofile.h"
+  "dumptofile.h"
+  'c-mode
+  '(visual-line-mode ivy-mode linum-mode company-mode)
+  47
+  '(1 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . t) (buffer-display-time 24521 34181 707279 831000) (buffer-file-coding-system . utf-8-unix) (fill-column . 80) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/bluz-scan/scantool.c"
+  "scantool.c"
+  'c-mode
+  '(abbrev-mode visual-line-mode ivy-mode linum-mode company-mode)
+  3692
+  '(2732 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . t) (buffer-display-time 24521 34058 323640 773000) (buffer-file-coding-system . utf-8-unix) (fill-column . 80) (truncate-lines))
+  '((mark-ring (1 3895 1932 1165 20 3638 1985 235 233 1274 1166 1207 3896 3341 3435 3100))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/org/plan.org"
+  "plan.org"
+  'org-mode
+  '(auto-fill-mode abbrev-mode visual-line-mode ivy-mode linum-mode company-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 24521 33367 986712 190000) (buffer-file-coding-system . utf-8-unix) (truncate-lines))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/bluz-scan/beacons_s.h"
+  "beacons_s.h"
+  'c-mode
+  '(visual-line-mode ivy-mode linum-mode company-mode)
+  155
+  '(61 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . t) (buffer-display-time 24520 25891 19262 265000) (buffer-file-coding-system . utf-8-unix) (fill-column . 80) (truncate-lines))
+  '((mark-ring (48 18 193 126))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/locator/nRF5_SDK_15.3.0_59ac345/examples/ble_peripheral/ble_app_beacon/main.c"
+  "main.c"
+  'c-mode
+  '(visual-line-mode ivy-mode linum-mode company-mode)
+  2932
+  '(5529 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . t) (buffer-display-time 24518 38696 748982 206000) (buffer-file-coding-system . undecided-dos) (fill-column . 80) (truncate-lines))
+  '((mark-ring (2932 5626 8781 1 8785 4156 6862 5265 5498 5497))))
+
+(desktop-create-buffer 208
+  "/home/valentine/projects/bluez-experiments/experiments/scantest.c"
+  "scantest.c"
+  'c-mode
+  '(visual-line-mode ivy-mode linum-mode company-mode)
+  6055
+  '(776 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . t) (buffer-display-time 24526 14169 692394 465000) (buffer-file-coding-system . undecided-unix) (fill-column . 80) (truncate-lines))
+  '((mark-ring (1))))
+

@@ -25,6 +25,12 @@
   (setq select-enable-clipboard 'nil)
   )
 
+;;----------------------MELPA repo-------------------------
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
+
 ;; Line wrapping
 
 (setq word-wrap t) ;; переносить  по словам
@@ -82,15 +88,6 @@
 
 ;; TODO - read about abbrev mode
 
-;;----------------------MELPA repo-------------------------
-(require 'package)
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-                    (not (gnutls-available-p))))
-       (proto (if no-ssl "http" "https")))
-  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
-  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t))
-  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
-(package-initialize)
 ;;------------------------some mode settings-----------------
 (ivy-mode 1) ;; ivy for better search
 (tool-bar-mode -1) ;;disable toolbar
@@ -137,16 +134,23 @@
 	 ("Org" (or (mode . org-mode)
 		    (filename . "OrgMode")
 		    (filename . "org")))
-	 ("Weeb" (or (mode . org-mode)
-		    (filename . "css")
-		    (filename . "html")
-		    (filename . "js")))
-	 ("remote" (or (filename . "sftp")
-		       (filename . "ssh")))
+	 ;; ("Weeb" (or (mode . org-mode)
+	 ;; 	    (filename . "css")
+	 ;; 	    (filename . "html")
+	 ;; 	    (filename . "js")))
+
+	 ;; ("remote" (or (filename . "sftp")
+	 ;; 	       (filename . "ssh")))
+
+	 ("Markdown" (or (mode . markdown-mode)
+			 (filename . ".md")))
 	 )))
 
 ;;-----------------------Markdown mode---------------------
 
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
 ;;-----------------------Org-mode---------------------------
 (require 'org)
@@ -167,6 +171,9 @@
 (add-to-list 'org-emphasis-alist
 	     '("~" (:background "deep sky blue" :foreground "MidnightBlue")
                ))
+
+(global-set-key "\C-ca" 'org-agenda)
+
 ;;-----------------------Neotree settings--------------------
 (add-to-list 'load-path "~/.emacs.d/neotree")
 (require 'neotree)
@@ -252,7 +259,7 @@ TODO : no newline after comma inside 'for' statement"
 
 (defconst c-expand-list
   '(
-    ("main" "int\nmain(\nint argc,\n char **argv){\n   \n}\n" 39)
+    ("main" "int main(int argc, char **argv)\n{\n   return 0;\n}\n" 37)
     ("if" "if (){\n\n}\n" (5 8))
     ("else" "else\n{\n\n}\n" (8))
     ("elsi" "else if ()\n{\n\n}\n" (10 12 21))
@@ -273,6 +280,7 @@ TODO : no newline after comma inside 'for' statement"
     ("cont" " /* CONTINUE */\ncontinue;\n" (26))
     ("fdoc" "/**\n * @brief \n * \n *\n * @param \n *\n * @return \n */" (15))
     ("par" " * @param " (10))
+    ("cm" "/* */" (3))
     )
   "Expansions for C mode")
 
@@ -454,10 +462,13 @@ TODO : no newline after comma inside 'for' statement"
  '(custom-safe-themes
    (quote
     ("a22f40b63f9bc0a69ebc8ba4fbc6b452a4e3f84b80590ba0a92b4ff599e53ad0" "0598c6a29e13e7112cfbc2f523e31927ab7dce56ebb2016b567e1eff6dc1fd4f" default)))
+ '(org-agenda-files
+   (quote
+    ("~/Desktop/org/uni.org" "~/projects/locator/org/locator_agenda.org")))
  '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (doom-modeline rjsx-mode markdown-preview-eww markdown-preview-mode markdown-mode latex-preview-pane counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
+    (ox-gfm markdown-mode+ origami-predef origami doom-modeline rjsx-mode markdown-preview-eww markdown-preview-mode markdown-mode latex-preview-pane counsel-tramp magit elpy color-theme gruvbox-theme company org-edna ivy-explorer hydra ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
