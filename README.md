@@ -1,7 +1,7 @@
 ### Beaver Emacs
 My personal emacs configuration.
 
-## Packages using
+## Packages in use
 - [neotree](https://github.com/jaypei/emacs-neotree)
 - [all-the-icons](https://github.com/domtronn/all-the-icons.el)
 - [memoize](https://github.com/skeeto/emacs-memoize)
